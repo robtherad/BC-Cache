@@ -14,3 +14,6 @@
 
 //Call BC Template
 [] execVM "f\bcInit.sqf";
+
+//Call the cache scripts
+[] execVM "scripts\cache\cache_init.sqf";
