@@ -2,7 +2,6 @@
 
 if (!isDedicated) then {
 	[] execVM "scripts\cache\vehicles\c_lockVehs.sqf"; //DEAD END
-    [] execVM "scripts\cache\objectives\c_cacheMarkers.sqf";
 };
 
 if (isServer) then {

@@ -33,14 +33,4 @@ if (!isNil "bc_cachesDeployed" && bc_cachesPlaced) then {
             _markerstr setMarkerColorLocal "ColorOPFOR";
         };
     } forEach _cacheArray;
-        
-    if (side player == east) then {
-        //Spawn Marker
-        _markerName = "OpMarkSpawn";
-        _markerstr = createMarkerLocal [_markerName,(getPos player)];
-        _markerstr setMarkerShapeLocal "ICON";
-        _markerstr setMarkerTypeLocal "hd_dot";
-        _markerstr setMarkerTextLocal "OPFOR Start";
-        _markerstr setMarkerColorLocal "ColorBlack";
-    };
 };
