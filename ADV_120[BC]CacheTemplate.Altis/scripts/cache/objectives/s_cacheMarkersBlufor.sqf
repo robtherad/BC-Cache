@@ -10,8 +10,9 @@ _nextDone = 1;
 _getDone = 1.5;
 _originalErrorPos = 400;
 _originalErrorSize = 750;
+bc_cache_mission = true;
 
-while {true} do {
+while {bc_cache_mission} do {
 	if (time >= (_missionFracTime*60)*_nextDone) then {
 		_passedVars = [];
 		{
@@ -63,6 +64,7 @@ while {true} do {
 		//Execute client side of script if client is on side west
 		[[[_passedVars],"scripts\cache\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 		//No more need to loop, final update
+        if (true) then {bc_cache_mission = false;};
 		if (true) exitWith {};
 	};
 	uisleep 15;
