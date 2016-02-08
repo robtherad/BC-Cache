@@ -19,7 +19,11 @@ if (isServer) then {
         clearBackpackCargoGlobal _vehName;
         clearItemCargoGlobal _vehName;
         
-        //Add useful items to the cache
+        // Add useful items to the cache. Use command corresponding to the item type:
+        //  addItemCargoGlobal      - https://community.bistudio.com/wiki/addItemCargoGlobal
+        //  addWeaponCargoGlobal    - https://community.bistudio.com/wiki/addWeaponCargoGlobal
+        //  addMagazineCargoGlobal  - https://community.bistudio.com/wiki/addMagazineCargoGlobal
+        //  addBackpackCargoGlobal  - https://community.bistudio.com/wiki/addBackpackCargoGlobal
         _vehName addItemCargoGlobal ["FirstAidKit", 30];
         _vehName addItemCargoGlobal ["rhs_mag_an_m8hc", 20];
         _vehName addWeaponCargoGlobal ["rhs_weap_rpg26",3];
