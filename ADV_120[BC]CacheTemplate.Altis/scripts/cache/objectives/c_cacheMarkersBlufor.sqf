@@ -15,7 +15,7 @@ _passedArray = _this select 0;
 if (isNil "bluCacheMarkersCreated") then {
 	{
 		//hint format["%1",_passedArray];
-		_markerArray = _passedArray select (_forEachIndex);
+		_markerArray = _x;
 	
 		//Unpack variables
 		_markerName = _markerArray select 0;
@@ -29,14 +29,14 @@ if (isNil "bluCacheMarkersCreated") then {
 		_markerName setMarkerSizeLocal [_size, _size];
 		_markerName setMarkerBrushLocal "Grid";
 		_markerName setMarkerColorLocal "ColorOPFOR";
-	} forEach _cacheArray;
+	} forEach _passedArray;
 	bluCacheMarkersCreated = true;
 };
 
-//Update markers
+//Update markers - Only if they are still alive
 {
 	//hint format["%1",_passedArray];
-	_markerArray = _passedArray select (_forEachIndex);
+	_markerArray = _x;
 	
 	//Unpack variables
 	_markerName = _markerArray select 0;
@@ -47,6 +47,11 @@ if (isNil "bluCacheMarkersCreated") then {
 	//Update marker location
 	_markerName setMarkerPos [_xPos,_yPos];
 	_markerName setMarkerSizeLocal [_size, _size];
-} forEach _cacheArray;
+} forEach _passedArray;
 
+// Hide rough markers for dead caches
+{
+    _markerName = str(_x) + "MarkBlu";
+    _markerName setMarkerAlphaLocal 0;
+} forEach bc_deadCacheArray;
 titleText ["Your map has been updated with intel on cache locations.","PLAIN DOWN"];
