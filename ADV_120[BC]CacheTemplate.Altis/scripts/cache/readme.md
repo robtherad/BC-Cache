@@ -8,7 +8,7 @@ I recommend you read through the steps fully before you follow them so you don't
 
 0. Place the cache in the editor. Name the cache and place the following line in the initialization field of the cache: ```missionNamespace setVariable ["[NAMEOFCACHE]MarkVar","DISPLAYED NAME OF CACHE"];``` Make sure you replace `[NAMEOFCACHE]` with the name you gave the object you are using as a cache and `DISPLAYED NAME OF CACHE` with the name for the cache you want players to see.
 
-0. Now place markers in the editor that will be locations that the cache can spawn at. Multiple caches should NOT share the same markers. The easiest way to create the markers is to create a single marker named after the cache and then copy it by pressing `CTRL` and `C` at the same time with it selected. Then press `CTRL` and `V` together to paste a copy of that marker with an underscore and a number after it. You can continue to paste the same marker over and over again to increment the number attached to the end.
+0. Now place markers in the editor that will be locations that the cache can spawn at. **Markers should be ICONS with an AXIS A and AXIS B size of 1**. Multiple caches should NOT share the same markers. The easiest way to create the markers is to create a single marker named after the cache and then copy it by pressing `CTRL` and `C` at the same time with it selected. Then press `CTRL` and `V` together to paste a copy of that marker with an underscore and a number after it. You can continue to paste the same marker over and over again to increment the number attached to the end.
 
 0. Open `objective_settings.sqf` and add the name of the cache variable to `_cacheArray`. 
 
@@ -18,7 +18,7 @@ I recommend you read through the steps fully before you follow them so you don't
 
 0. Repeat the above steps (2-7) as many times as you need to, to create as many caches as you would like to have in your mission.
 
-0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache`. Once this is done, preview the mission and make sure everything is working as intended.
+0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache`. Once this is done, test the mission and make sure everything is working as intended.
 
 ****
 #### Vehicle Lock
@@ -47,7 +47,7 @@ For an overview of the script flow take a look at the readme files inside the tw
 * Cache locations are marked only for OPFOR at the start of the mission. After the mission has been running for 1/4th of it's alotted time the BLUFOR forces will have markers added to their map that indicate the rough locations of the caches. These markers start out very large with the center of the circle randomly offset from the true location of the cache. As the mission progresses even further the size and offset of the markers will decrease every few minutes. Once there are only 10 minutes left in the mission the markers will reach their final size (25m radius) and offset (up to 12.5m in any direction).
 * Once a cache is destroyed it's exact location is marked for BLUFOR players and it is marked as destroyed. A message will pop up warning all players that the cache has been destroyed and display how many caches remain to be destroyed.
 * Once all caches are destroyed a message will be displayed saying that BLUFOR are victorious.
-* Caches are only able to be destroyed by satchel charges. 
+* Caches are only able to be destroyed by **vanilla EXPLOSIVE SATCHEL** charges. 
 * Caches are randomly placed at one of several markers that are defined in the settings file in the objectives folder. Each marker has an equal chance of being selected.
 * Caches are cleared of their default cargo and filled with cargo as defined in `fn_createCaches.sqf`.
 
