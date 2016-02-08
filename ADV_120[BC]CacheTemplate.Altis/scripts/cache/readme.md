@@ -18,7 +18,7 @@ I recommend you read through the steps fully before you follow them so you don't
 
 0. Repeat the above steps (2-7) as many times as you need to, to create as many caches as you would like to have in your mission.
 
-0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache`. Once this is done, preview the mission and make sure everything is working as intended.
+0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache`. Once this is done, test the mission and make sure everything is working as intended.
 
 ****
 #### Vehicle Lock
