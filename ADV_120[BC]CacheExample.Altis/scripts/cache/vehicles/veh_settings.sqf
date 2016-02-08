@@ -5,6 +5,6 @@
 */
 
 // An array filled with ground vehicles - Only crewmen can drive/gun.
-_vehArray = [];
+_vehArray = [blueAPC1,blueAPC2];
 // An array filled with helicopters - Only pilots can fly/gun.
-_heliArray = [];
+_heliArray = [helomh9,helohellcat];

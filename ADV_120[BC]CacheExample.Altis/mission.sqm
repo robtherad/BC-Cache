@@ -20,7 +20,10 @@ class Mission
 		"A3_Characters_F_Mark",
 		"A3_Data_F_Curator_Characters",
 		"A3_Modules_F_Curator_Misc",
-		"A3_Weapons_F_Bootcamp_Ammoboxes"
+		"A3_Weapons_F_Bootcamp_Ammoboxes",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Air_F_EPB_Heli_Light_03",
+		"rhsusf_c_m113"
 	};
 	addOnsAuto[]=
 	{
@@ -31,6 +34,9 @@ class Mission
 		"A3_Modules_F",
 		"task_force_radio_items",
 		"A3_Weapons_F_Bootcamp_Ammoboxes",
+		"A3_Air_F_Heli_Light_01",
+		"A3_Air_F_EPB_Heli_Light_03",
+		"rhsusf_c_m113",
 		"a3_map_altis"
 	};
 	randomSeed=1726574;
@@ -55,7 +61,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=5;
+		items=7;
 		class Item0
 		{
 			side="WEST";
@@ -65,12 +71,12 @@ class Mission
 				class Item0
 				{
 					position[]={14554.509,17.91,16765.123};
-					azimut=216.41734;
+					azimut=216.41701;
 					special="NONE";
 					id=0;
 					side="WEST";
 					vehicle="B_engineer_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 					init="Blue_HQ = group this;";
@@ -87,12 +93,12 @@ class Mission
 				class Item0
 				{
 					position[]={14631.002,17.91,16840.369};
-					azimut=763.82892;
+					azimut=763.82898;
 					special="NONE";
 					id=1;
 					side="EAST";
 					vehicle="O_officer_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.40000001;
 					init="Red_HQ = group this;";
@@ -204,15 +210,59 @@ class Mission
 				};
 			};
 		};
+		class Item5
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14557.391,17.91,16763.135};
+					azimut=216.41701;
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="B_Pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="Blue_HQ = group this;";
+					description="Pilot";
+				};
+			};
+		};
+		class Item6
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14559.723,17.91,16761.35};
+					azimut=216.41701;
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="B_crew_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="Blue_HQ = group this;";
+					description="Pilot";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=3;
+		items=7;
 		class Item0
 		{
 			position[]={14555.792,17.91,16789.465};
 			azimut=-1.07058;
-			id=5;
+			id=7;
 			side="EMPTY";
 			vehicle="Box_FIA_Ammo_F";
 			skill=0.60000002;
@@ -223,7 +273,7 @@ class Mission
 		{
 			position[]={14562.7,17.91,16794.541};
 			azimut=-1.07058;
-			id=6;
+			id=8;
 			side="EMPTY";
 			vehicle="Box_FIA_Ammo_F";
 			skill=0.60000002;
@@ -234,12 +284,60 @@ class Mission
 		{
 			position[]={14568.975,17.91,16799.918};
 			azimut=-1.07058;
-			id=7;
+			id=9;
 			side="EMPTY";
 			vehicle="Box_FIA_Ammo_F";
 			skill=0.60000002;
 			text="cacheGeorgeCrate";
 			init="missionNamespace setVariable [""cacheGeorgeCrateMarkVar"",""Cache George""];";
+		};
+		class Item3
+		{
+			position[]={14618.308,17.91,16724.557};
+			azimut=133.87889;
+			special="NONE";
+			id=10;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			leader=1;
+			skill=0.60000002;
+			text="helomh9";
+		};
+		class Item4
+		{
+			position[]={14633.358,17.91,16741.477};
+			azimut=132.20006;
+			special="NONE";
+			id=11;
+			side="EMPTY";
+			vehicle="I_Heli_light_03_unarmed_F";
+			leader=1;
+			skill=0.60000002;
+			text="helohellcat";
+		};
+		class Item5
+		{
+			position[]={14597.649,17.91,16736.063};
+			azimut=134.56847;
+			special="NONE";
+			id=12;
+			side="EMPTY";
+			vehicle="rhsusf_m113d_usarmy";
+			leader=1;
+			skill=0.60000002;
+			text="blueAPC1";
+		};
+		class Item6
+		{
+			position[]={14610.241,17.91,16741.867};
+			azimut=128.183;
+			special="NONE";
+			id=13;
+			side="EMPTY";
+			vehicle="rhsusf_m113d_usarmy";
+			leader=1;
+			skill=0.60000002;
+			text="blueAPC2";
 		};
 	};
 	class Markers
