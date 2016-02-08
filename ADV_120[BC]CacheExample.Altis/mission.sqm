@@ -1,0 +1,471 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Modules_F_Curator_Effects",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Modules_F_HC",
+		"task_force_radio_items",
+		"A3_Weapons_F_Beta_Ammoboxes",
+		"a3_weapons_f_ammoboxes",
+		"a3_map_altis",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_EPC",
+		"A3_Modules_F_Intel",
+		"A3_Modules_F_Multiplayer",
+		"A3_Modules_F",
+		"A3_Missions_F_Curator",
+		"A3_Characters_F_Mark",
+		"A3_Data_F_Curator_Characters",
+		"A3_Modules_F_Curator_Misc",
+		"A3_Weapons_F_Bootcamp_Ammoboxes"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Modules_F_Curator_Misc",
+		"A3_Modules_F",
+		"task_force_radio_items",
+		"A3_Weapons_F_Bootcamp_Ammoboxes",
+		"a3_map_altis"
+	};
+	randomSeed=1726574;
+	class Intel
+	{
+		resistanceEast=1;
+		timeOfChanges=28800;
+		startWeather=0.34999999;
+		startWind=0;
+		startWaves=0.099999994;
+		forecastWeather=0.34999999;
+		forecastWind=0;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
+		year=2009;
+		month=8;
+		day=9;
+		hour=12;
+		minute=0;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+	class Groups
+	{
+		items=5;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14554.509,17.91,16765.123};
+					azimut=216.41734;
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="B_engineer_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="Blue_HQ = group this;";
+					description="Platoon Lead";
+				};
+			};
+		};
+		class Item1
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14631.002,17.91,16840.369};
+					azimut=763.82892;
+					special="NONE";
+					id=1;
+					side="EAST";
+					vehicle="O_officer_F";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.40000001;
+					init="Red_HQ = group this;";
+					description="Platoon Lead";
+				};
+			};
+		};
+		class Item2
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14747.771,17.889999,16488.109};
+					id=2;
+					side="LOGIC";
+					vehicle="ModuleCoverMap_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=0;
+					synchronizations[]={1};
+				};
+			};
+		};
+		class Item3
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14747.803,17.889999,16489.531};
+					special="NONE";
+					id=3;
+					side="LOGIC";
+					vehicle="LocationArea_F";
+					leader=1;
+					skill=0.60000002;
+					syncId=1;
+					synchronizations[]={0,2};
+				};
+			};
+		};
+		class Item4
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={14593.027,17.91,16833.051};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="TeamLeaderRadio";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="RiflemanRadio";
+						};
+						class Item2
+						{
+							value="7";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="terrain_interception_coefficient";
+						};
+						class Item3
+						{
+							value="TaskForceRadio";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_name";
+						};
+						class Item4
+						{
+							value="123";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="radio_channel_password";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_sw_frequencies_for_side";
+						};
+						class Item6
+						{
+							value="0";
+							parentCls="tfar_ModuleTaskForceRadioEnforceUsage";
+							typeName="same_lr_frequencies_for_side";
+						};
+					};
+					id=4;
+					side="LOGIC";
+					vehicle="tfar_ModuleTaskForceRadioEnforceUsage";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=3;
+		class Item0
+		{
+			position[]={14555.792,17.91,16789.465};
+			azimut=-1.07058;
+			id=5;
+			side="EMPTY";
+			vehicle="Box_FIA_Ammo_F";
+			skill=0.60000002;
+			text="cacheOneCrate";
+			init="missionNamespace setVariable [""cacheOneCrateMarkVar"",""Cache One""];";
+		};
+		class Item1
+		{
+			position[]={14562.7,17.91,16794.541};
+			azimut=-1.07058;
+			id=6;
+			side="EMPTY";
+			vehicle="Box_FIA_Ammo_F";
+			skill=0.60000002;
+			text="cacheTwoCrate";
+			init="missionNamespace setVariable [""cacheTwoCrateMarkVar"",""Cache Number Two""];";
+		};
+		class Item2
+		{
+			position[]={14568.975,17.91,16799.918};
+			azimut=-1.07058;
+			id=7;
+			side="EMPTY";
+			vehicle="Box_FIA_Ammo_F";
+			skill=0.60000002;
+			text="cacheGeorgeCrate";
+			init="missionNamespace setVariable [""cacheGeorgeCrateMarkVar"",""Cache George""];";
+		};
+	};
+	class Markers
+	{
+		items=12;
+		class Item0
+		{
+			position[]={14499.038,17.504211,16813.574};
+			name="cacheOne2";
+			text="0";
+			type="Empty";
+			angle=-126.176;
+		};
+		class Item1
+		{
+			position[]={14511.721,17.546526,16827.936};
+			name="cacheOne2_1";
+			text="1";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={14525.901,17.585739,16840.568};
+			name="cacheOne2_2";
+			text="2";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={14539.787,17.750265,16855.875};
+			name="cacheOne2_3";
+			text="3";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={14516.813,17.745642,16796.217};
+			name="cacheTwo";
+			text="0";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item5
+		{
+			position[]={14528.833,17.8055,16810.906};
+			name="cacheTwo_1";
+			text="1";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item6
+		{
+			position[]={14542.752,17.908037,16823.971};
+			name="cacheTwo_2";
+			text="2";
+			type="Empty";
+			colorName="ColorBlue";
+		};
+		class Item7
+		{
+			position[]={14556.019,17.890182,16839.75};
+			name="cacheTwo_3";
+			text="3";
+			type="Empty";
+			colorName="ColorBlue";
+			angle=25;
+		};
+		class Item8
+		{
+			position[]={14484.188,17.429134,16825.971};
+			name="cacheGeorge";
+			text="0";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item9
+		{
+			position[]={14498.173,17.46661,16841.389};
+			name="cacheGeorge_1";
+			text="1";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item10
+		{
+			position[]={14510.897,17.490702,16855.189};
+			name="cacheGeorge_2";
+			text="2";
+			type="Empty";
+			colorName="ColorRed";
+			angle=111;
+		};
+		class Item11
+		{
+			position[]={14525.416,17.553038,16868.092};
+			name="cacheGeorge_3";
+			text="3";
+			type="Empty";
+			colorName="ColorRed";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={14743.456,17.889999,16488.684};
+			a=810;
+			b=710;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=10;
+			timeoutMid=10;
+			timeoutMax=10;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="!((vehicle player) in thisList) && ((typeof player != ""seagull"") || (typeof player != ""VirtualCurator_F"")) && (((getPos player) select 0 >= 20) && ((getPos player) select 1 >= 20)) && (alive player) && (isNil ""f_cam_VirtualCreated"")";
+			expActiv="player setDamage 1;  titletext [""You have been punished for leaving the play area."", ""PLAIN""];";
+			class Effects
+			{
+			};
+			synchronizations[]={1};
+			syncId=2;
+		};
+		class Item1
+		{
+			position[]={14743.474,17.889999,16489.773};
+			a=800;
+			b=700;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="missionarea";
+			expCond="!((vehicle player) in thisList) && ((typeof player != ""seagull"") || (typeof player != ""VirtualCurator_F"")) && (((getPos player) select 0 >= 20) && ((getPos player) select 1 >= 20)) && (alive player) && (isNil ""f_cam_VirtualCreated"")";
+			expActiv="titleText [""You are leaving the play area. Turn back now.\n\nIf you continue on you WILL BE KILLED."", ""PLAIN""];";
+			expDesactiv="titleText ["""",""PLAIN""];";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=1583608;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.25;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2009;
+		day=29;
+		hour=11;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=14588207;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.25;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2009;
+		day=29;
+		hour=11;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=4997687;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.25;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2009;
+		day=29;
+		hour=11;
+		startFogDecay=0.013;
+		forecastFogDecay=0.013;
+	};
+};
