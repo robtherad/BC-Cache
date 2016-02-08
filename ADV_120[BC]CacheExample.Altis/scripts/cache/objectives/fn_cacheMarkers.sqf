@@ -11,7 +11,9 @@ if (!isNil "bc_cachesDeployed" && bc_cachesPlaced) then {
         _markerName = str(_x) + "MarkVar";
         _markerText = missionNamespace getVariable [_markerName,_markerName];
         _markerPosVar = str(_x) + "MarkPos";
-        missionNamespace setVariable [_markerPosVar,(getPos _x)];
+        _cacheMarkerName = _x getVariable "cacheMarkerName";
+        _pos = getMarkerPos _cacheMarkerName;
+        missionNamespace setVariable [_markerPosVar,_pos];
         
         //Add local eventhandler to crates
         _x  addEventHandler["handleDamage",{ 
