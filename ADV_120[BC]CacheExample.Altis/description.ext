@@ -5,8 +5,8 @@ class Header {
 };
 
 author = "Bravo Company";
-onLoadName = "MissionNameHere";
-OnLoadMission = "LoadingScreenMessageHere";
+onLoadName = "Cache Example Mission";
+OnLoadMission = "Allows you to test the mission's mechanics without any real setup.";
 loadScreen =  "images\intro.jpg";
 Saving = 0;
 enableItemsDropping = 0;
@@ -40,7 +40,7 @@ class Params {
         title = "Safe Start (Minutes)";
         values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
         texts[] = {"Off","1","2","3","4","5","6","7","8","9","10","15"};
-        default = 10;
+        default = 0;
         code = "f_param_mission_timer = %1";
     };
     class s_loadout_radio {
@@ -63,9 +63,9 @@ class Params {
     };
     class mission_runtime {
         title = "Mission Time Limit (Doesn't include safestart time):";
-        values[] = {15,30,45,60};
-        texts[] = {"15 minutes","30 minutes","45 minutes (default)","60 minutes"};
-        default = 45;
+        values[] = {1,4,5,10,15,30,45,60};
+        texts[] = {"1","4","5","10","15 minutes","30 minutes","45 minutes (default)","60 minutes"};
+        default = 4;
     };
     class s_gps_markers {
         title = "GPS Map Markers:";

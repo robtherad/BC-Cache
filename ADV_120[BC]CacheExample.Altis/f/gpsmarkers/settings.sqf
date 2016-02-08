@@ -48,7 +48,7 @@
         This system should allow for more in depth missions featuring three sides.
 */
 // 0 = armor, 1 == helicopter, 2 == plane
-_westVehArray = nil;
+_westVehArray = [[blueAPC1,0],[blueAPC2,0],[helohellcat,1],[helomh9,1]];
 _eastVehArray = nil;
 _indVehArray = nil;
 bc_ignoreMarkerArray = []; //if blank set to []

@@ -79,7 +79,7 @@ class Mission
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					init="Blue_HQ = group this;";
+					init="Blue_A1 = group this;";
 					description="Platoon Lead";
 				};
 			};
@@ -227,7 +227,7 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="Blue_HQ = group this;";
+					init="Blue_A2 = group this;";
 					description="Pilot";
 				};
 			};
@@ -294,7 +294,7 @@ class Mission
 		class Item3
 		{
 			position[]={14618.308,17.91,16724.557};
-			azimut=133.87889;
+			azimut=133.879;
 			special="NONE";
 			id=10;
 			side="EMPTY";
@@ -302,11 +302,12 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="helomh9";
+			init="this setVariable [""bc_MarkerName"", ""Hummingbird 1""];";
 		};
 		class Item4
 		{
 			position[]={14633.358,17.91,16741.477};
-			azimut=132.20006;
+			azimut=132.2;
 			special="NONE";
 			id=11;
 			side="EMPTY";
@@ -314,11 +315,12 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="helohellcat";
+			init="this setVariable [""bc_MarkerName"", ""Hellcat 1""];";
 		};
 		class Item5
 		{
 			position[]={14597.649,17.91,16736.063};
-			azimut=134.56847;
+			azimut=134.56799;
 			special="NONE";
 			id=12;
 			side="EMPTY";
@@ -326,6 +328,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="blueAPC1";
+			init="this setVariable [""bc_MarkerName"", ""APC 1""];";
 		};
 		class Item6
 		{
@@ -338,6 +341,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="blueAPC2";
+			init="this setVariable [""bc_MarkerName"", ""APC 2""];";
 		};
 	};
 	class Markers
