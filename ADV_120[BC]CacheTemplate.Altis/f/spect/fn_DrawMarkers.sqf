@@ -48,7 +48,34 @@ if (!isNil "sectorControl") then {
         } forEach bc_triggerArray;
     };
 };
-
+if (true) then {
+	if (true) then {
+		{
+			_color = f_cam_opfor_color;
+			_color set [3,1];
+			_markerName = str(_x) + "Mark";
+			_markerNameVar = _markerName + "Var";
+			iconName = missionNamespace getVariable [_markerNameVar,_markerName];
+			//iconName = _x getVariable ["markerText",_markerName];
+			_markerPosVar = str(_x) + "MarkPos";
+			_pos = missionNamespace getVariable [_markerPosVar,_markerName];
+			
+			_fullmapWindow drawIcon ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,20,20,0,iconName,2,0.05,"TahomaB"];
+		} forEach bc_cacheArray;
+		{
+			_color = f_cam_blufor_color;
+			_color set [3,1];
+			_markerName = str(_x) + "Mark";
+			_markerNameVar = _markerName + "Var";
+			iconName = missionNamespace getVariable [_markerNameVar,_markerName];
+			//iconName = _x getVariable ["markerText",_markerName];
+			_markerPosVar = str(_x) + "MarkPos";
+			_pos = missionNamespace getVariable [_markerPosVar,_markerName];
+			
+			_fullmapWindow drawIcon ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,20,20,0,iconName,2,0.05,"TahomaB"];
+		} forEach bc_deadCacheArray;
+	};
+};
 f_cam_fired = f_cam_fired - [objNull];
 if(f_cam_tracerOn) then {
     {
