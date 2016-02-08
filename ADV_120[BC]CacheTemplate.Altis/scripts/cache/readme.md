@@ -44,11 +44,24 @@ For an overview of the script flow take a look at the readme files inside the tw
 ****
 
 #### Caches
-* Cache locations are marked only for OPFOR at the start of the mission. After the mission has been running for 1/4th of it's alotted time the BLUFOR forces will have markers added to their map that indicate the rough locations of the caches. These markers start out very large with the center of the circle randomly offset from the true location of the cache. As the mission progresses even further the size and offset of the markers will decrease every few minutes. Once there are only 10 minutes left in the mission the markers will reach their final size (25m radius) and offset (up to 12.5m in any direction).
+###### Marking
+* Cache locations are marked only for OPFOR at the start of the mission. 
+
+* After the mission has been running for 1/4th of it's alotted time the BLUFOR forces will have markers added to their map that indicate the rough locations of the caches. These markers start out very large with the center of the circle randomly offset from the true location of the cache. 
+ 
+* Use the formula `((T / 4) * 1.5) - (T/4) = GAP BETWEEN BLUFOR INTEL UPDATES` where `T` is the safestart time plus the mission run time to find out the gap between BLUFOR cache intel updates.
+
+* Once there are only 10 minutes left in the mission the markers will reach their final size (25m radius) and offset (up to 12.5m in any direction).
+
 * Once a cache is destroyed it's exact location is marked for BLUFOR players and it is marked as destroyed. A message will pop up warning all players that the cache has been destroyed and display how many caches remain to be destroyed.
+
+###### Other
 * Once all caches are destroyed a message will be displayed saying that BLUFOR are victorious.
+
 * Caches are only able to be destroyed by **vanilla EXPLOSIVE SATCHEL** charges. 
+
 * Caches are randomly placed at one of several markers that are defined in the settings file in the objectives folder. Each marker has an equal chance of being selected.
+
 * Caches are cleared of their default cargo and filled with cargo as defined in `fn_createCaches.sqf`.
 
 ****
