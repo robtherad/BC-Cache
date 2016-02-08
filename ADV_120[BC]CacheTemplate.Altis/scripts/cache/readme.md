@@ -18,7 +18,7 @@ I recommend you read through the steps fully before you follow them so you don't
 
 0. Repeat the above steps (2-7) as many times as you need to, to create as many caches as you would like to have in your mission.
 
-0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache`. Once this is done, test the mission and make sure everything is working as intended.
+0. Now you will want to customize what items spawn in the inventory of the caches. You can edit this in `fn_createCaches.sqf` under the line that says `Add useful items to the cache.`. Make sure you use the correct command for the item type you are trying to add to the cache. The commands are listed above where you need to add your own along with links to the BI wiki articles on those commands. Once this is done, test the mission and make sure everything is working as intended.
 
 ****
 #### Vehicle Lock
@@ -34,7 +34,7 @@ It can be any icon/shape/size, it just needs to have the correct name. Only defi
 ****
 #### Vehicle Cargo
 * Define vehicles/helicopters whose cargo will be edited in `veh_settings.sqf`.
-* Edit the list of items in `s_vehCargo.sqf` to match what you want added to vehicles/helicopters.
+* Edit the list of items in `s_vehCargo.sqf` to match what you want added to vehicles/helicopters. Make sure you use the correct command for the item type you are trying to add to the cache. The commands are listed above where you need to add your own along with links to the BI wiki articles on those commands.
 
 ****
 
