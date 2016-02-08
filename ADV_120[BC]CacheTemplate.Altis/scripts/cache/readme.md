@@ -8,7 +8,7 @@ I recommend you read through the steps fully before you follow them so you don't
 
 0. Place the cache in the editor. Name the cache and place the following line in the initialization field of the cache: ```missionNamespace setVariable ["[NAMEOFCACHE]MarkVar","DISPLAYED NAME OF CACHE"];``` Make sure you replace `[NAMEOFCACHE]` with the name you gave the object you are using as a cache and `DISPLAYED NAME OF CACHE` with the name for the cache you want players to see.
 
-0. Now place markers in the editor that will be locations that the cache can spawn at. Multiple caches should NOT share the same markers. The easiest way to create the markers is to create a single marker named after the cache and then copy it by pressing `CTRL` and `C` at the same time with it selected. Then press `CTRL` and `V` together to paste a copy of that marker with an underscore and a number after it. You can continue to paste the same marker over and over again to increment the number attached to the end.
+0. Now place markers in the editor that will be locations that the cache can spawn at. **Markers should be ICONS with an AXIS A and AXIS B size of 1**. Multiple caches should NOT share the same markers. The easiest way to create the markers is to create a single marker named after the cache and then copy it by pressing `CTRL` and `C` at the same time with it selected. Then press `CTRL` and `V` together to paste a copy of that marker with an underscore and a number after it. You can continue to paste the same marker over and over again to increment the number attached to the end.
 
 0. Open `objective_settings.sqf` and add the name of the cache variable to `_cacheArray`. 
 
