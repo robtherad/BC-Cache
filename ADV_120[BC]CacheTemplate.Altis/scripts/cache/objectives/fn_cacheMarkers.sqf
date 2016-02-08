@@ -1,4 +1,4 @@
-#include "obj_settings";
+#include "obj_settings.sqf";
 bc_cachesPlaced = true;
 {
     _mark = _x getVariable ["cacheMarkerName",nil];

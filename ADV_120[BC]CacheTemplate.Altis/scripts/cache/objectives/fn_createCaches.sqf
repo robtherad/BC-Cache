@@ -34,5 +34,5 @@ if (isServer) then {
         }]; 
     } forEach _cacheList;
     
-    [] execVM "scripts\cache\s_watchCaches.sqf";
+    [] execVM "scripts\cache\objectives\s_watchCaches.sqf";
 };

@@ -93,7 +93,7 @@ class CfgFunctions {
         };
         #include "f\spect\functions.hpp"
         class objSpawn {
-            file = "scripts\cache";
+            file = "scripts\cache\objectives";
             class cacheMarkers{};
             class cacheMarkersInit {postInit = 1;};
             class createCaches {postInit = 1;};

@@ -38,7 +38,7 @@ while {bc_cache_mission} do {
 		_nextDone = _nextDone + .25;
 		_getDone = _nextDone + .5;
 		//Execute client side of script if client is on side west
-		[[[_passedVars],"scripts\cache\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
+		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 	};
 	if (time >= ((_missionRunTimeMins*60)-600) && (_nextDone < 10)) then { //10 mins before mission ends
 		_passedVars = [];
@@ -62,7 +62,7 @@ while {bc_cache_mission} do {
 		_getDone = 51;
 		
 		//Execute client side of script if client is on side west
-		[[[_passedVars],"scripts\cache\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
+		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 		//No more need to loop, final update
         if (true) then {bc_cache_mission = false;};
 		if (true) exitWith {};
