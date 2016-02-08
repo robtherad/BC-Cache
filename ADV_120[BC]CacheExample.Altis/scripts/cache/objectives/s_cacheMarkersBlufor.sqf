@@ -3,6 +3,7 @@
 _missionSafeTime = ["f_param_mission_timer",15] call BIS_fnc_getParamValue;
 _missionRunTimeMins = ["mission_runtime",60] call BIS_fnc_getParamValue;
 _missionFracTime = _missionSafeTime + (_missionRunTimeMins/4);
+_missionTotalTime = _missionSafeTime + _missionRunTimeMins;
 waitUntil {if (time >= (_missionFracTime*60)) then {true} else {uisleep 10;};}; //Wait for enough time to elapse so the battle can play out a bit
 
 
@@ -13,7 +14,7 @@ _originalErrorSize = 750;
 bc_cache_mission = true;
 
 while {bc_cache_mission} do {
-	if (time >= (_missionFracTime*60)*_nextDone) then {
+	if ((time >= (_missionFracTime*60)*_nextDone) && (time <= ((_missionTotalTime*60)-600))) then {
 		_passedVars = [];
 		{
 			_markArray = []; //Use this as a container for each marker
@@ -34,13 +35,14 @@ while {bc_cache_mission} do {
 			
 			//Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach _cacheArray;
+		} forEach bc_cacheArray;
 		_nextDone = _nextDone + .25;
 		_getDone = _nextDone + .5;
 		//Execute client side of script if client is on side west
 		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 	};
-	if (time >= ((_missionRunTimeMins*60)-600) && (_nextDone < 10)) then { //10 mins before mission ends
+    uisleep 10;
+	if (time >= ((_missionTotalTime*60)-600) && (_nextDone < 10)) then { //10 mins before mission ends
 		_passedVars = [];
 		{
 			_markArray = []; //Use this as a container for each marker
@@ -56,8 +58,10 @@ while {bc_cache_mission} do {
 			_markArray pushBack _xPos;
 			_markArray pushBack _yPos;
 			_markArray pushBack _size;
+            
+            //Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach _cacheArray;
+		} forEach bc_cacheArray;
 		_nextDone = 50;
 		_getDone = 51;
 		
@@ -67,5 +71,5 @@ while {bc_cache_mission} do {
         if (true) then {bc_cache_mission = false;};
 		if (true) exitWith {};
 	};
-	uisleep 15;
+	uisleep 5;
 };
