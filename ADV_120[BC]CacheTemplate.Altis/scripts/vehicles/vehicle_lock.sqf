@@ -53,11 +53,11 @@ if (count _lockArray > 0) then {
         
         // ==================================================
         // Set variables to vehicle
-        _vehicle setVariable ["bc_lockedSides", _lockedSides];
-        _vehicle setVariable ["bc_lockedPositions", _lockedPositions];
-        _vehicle setVariable ["bc_lockedClasses", _lockedClasses];
-        _vehicle setVariable ["bc_lockedPlayers", _lockedPlayers];
-        _vehicle setVariable ["bc_lockedMessage", _lockedMessage];
+        _vehicle setVariable ["phx_lockedSides", _lockedSides];
+        _vehicle setVariable ["phx_lockedPositions", _lockedPositions];
+        _vehicle setVariable ["phx_lockedClasses", _lockedClasses];
+        _vehicle setVariable ["phx_lockedPlayers", _lockedPlayers];
+        _vehicle setVariable ["phx_lockedMessage", _lockedMessage];
         // ==================================================
         
         if (!isNil "_vehicle") then {
@@ -71,11 +71,11 @@ if (count _lockArray > 0) then {
                     _veh = _this select 0;
                     _pos = _this select 1;
                     
-                    _lckClss = _veh getVariable ["bc_lockedClasses", []]; // array
-                    _lckSide = _veh getVariable ["bc_lockedSides",[]]; // array
-                    _lckPosn = _veh getVariable ["bc_lockedPositions",[]]; // array
-                    _lckPlyr = _veh getVariable ["bc_lockedPlayers",[]];
-                    _lckMsgs = _veh getVariable ["bc_lockedMessage",""]; // string
+                    _lckClss = _veh getVariable ["phx_lockedClasses", []]; // array
+                    _lckSide = _veh getVariable ["phx_lockedSides",[]]; // array
+                    _lckPosn = _veh getVariable ["phx_lockedPositions",[]]; // array
+                    _lckPlyr = _veh getVariable ["phx_lockedPlayers",[]];
+                    _lckMsgs = _veh getVariable ["phx_lockedMessage",""]; // string
 
                     if (count _lckSide > 0) then {
                         // LOCK BY SIDE
@@ -116,11 +116,11 @@ if (count _lockArray > 0) then {
                     _pos = assignedVehicleRole _unit;
                     _pos = _pos select 0;
                     
-                    _lckClss = _veh getVariable ["bc_lockedClasses", []]; // array
-                    _lckSide = _veh getVariable ["bc_lockedSides",[]]; // array
-                    _lckPosn = _veh getVariable ["bc_lockedPositions",[]]; // array
-                    _lckPlyr = _veh getVariable ["bc_lockedPlayers",[]];
-                    _lckMsgs = _veh getVariable ["bc_lockedMessage",""]; // string
+                    _lckClss = _veh getVariable ["phx_lockedClasses", []]; // array
+                    _lckSide = _veh getVariable ["phx_lockedSides",[]]; // array
+                    _lckPosn = _veh getVariable ["phx_lockedPositions",[]]; // array
+                    _lckPlyr = _veh getVariable ["phx_lockedPlayers",[]];
+                    _lckMsgs = _veh getVariable ["phx_lockedMessage",""]; // string
                     
                     if (_pos == "Turret") then {_pos = "gunner"};
                     if (count _lckSide > 0) then {

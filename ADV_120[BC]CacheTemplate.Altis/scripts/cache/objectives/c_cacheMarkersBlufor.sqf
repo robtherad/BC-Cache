@@ -53,5 +53,5 @@ if (isNil "bluCacheMarkersCreated") then {
 {
     _markerName = str(_x) + "MarkBlu";
     _markerName setMarkerAlphaLocal 0;
-} forEach bc_deadCacheArray;
+} forEach phx_deadCacheArray;
 titleText ["Your map has been updated with intel on cache locations.","PLAIN DOWN"];
