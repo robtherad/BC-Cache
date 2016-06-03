@@ -17,3 +17,6 @@ if (hasInterface) then {phx_playerBoundsCheck_PFH = [phx_fnc_core_playerBoundsCh
 
 //Call PHX Template
 [] execVM "f\phxInit.sqf";
+
+//Call the cache scripts
+[] execVM "scripts\cache\cache_init.sqf";
