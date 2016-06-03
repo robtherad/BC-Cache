@@ -94,7 +94,11 @@ _cargoArray = [
 */
 // Place entries below. Make sure to separate entries with a comma and a line break!
 
-
+[ [box1,box2,box3],
+[ ["rhs_weap_rsp30_white",10] ],
+[ ["rhs_mag_30Rnd_556x45_M855A1_Stanag",60], ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",20], ["rhs_200rnd_556x45_M_SAW",20], ["SatchelCharge_Remote_Mag",2] ],
+[ ["FirstAidKit",20] ],
+[ ] ]
 
 
 // Always make sure there's no comma after the last entry!

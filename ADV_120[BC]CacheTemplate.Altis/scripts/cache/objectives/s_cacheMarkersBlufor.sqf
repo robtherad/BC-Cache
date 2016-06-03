@@ -11,9 +11,9 @@ _nextDone = 1;
 _getDone = 1.5;
 _originalErrorPos = 400;
 _originalErrorSize = 750;
-phx_cache_mission = true;
+bc_cache_mission = true;
 
-while {phx_cache_mission} do {
+while {bc_cache_mission} do {
 	if ((time >= (_missionFracTime*60)*_nextDone) && (time <= ((_missionTotalTime*60)-600))) then {
 		_passedVars = [];
 		{
@@ -35,10 +35,13 @@ while {phx_cache_mission} do {
 			
 			//Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach phx_cacheArray;
+		} forEach bc_cacheArray;
 		_nextDone = _nextDone + .25;
 		_getDone = _nextDone + .5;
 		//Execute client side of script if client is on side west
+        diag_log "PASSING BLUFOR MARKERS";
+        diag_log _passedVars;
+        diag_log "PASSED BLUFOR MARKERS";
 		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 	};
     uisleep 10;
@@ -50,8 +53,8 @@ while {phx_cache_mission} do {
 			_markArray pushBack _markerName;
 			
 			//Generate positions
-			_xPos = ((getPos _x select 0)+((random (25))-12.5));
-			_yPos = ((getPos _x select 1)+((random (25))-12.5));
+			_xPos = ((getPos _x select 0)+((random (80))-40));
+			_yPos = ((getPos _x select 1)+((random (80))-40));
 			_size = 50;
 			
 			//Add positions to container
@@ -61,14 +64,17 @@ while {phx_cache_mission} do {
             
             //Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach phx_cacheArray;
+		} forEach bc_cacheArray;
 		_nextDone = 50;
 		_getDone = 51;
 		
 		//Execute client side of script if client is on side west
+        diag_log "PASSING FINAL BLUFOR MARKERS";
+        diag_log _passedVars;
+        diag_log "PASSED FINAL BLUFOR MARKERS";
 		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 		//No more need to loop, final update
-        if (true) then {phx_cache_mission = false;};
+        if (true) then {bc_cache_mission = false;};
 		if (true) exitWith {};
 	};
 	uisleep 5;

@@ -7,12 +7,12 @@ Argument format:
 */
 if ((faction player)== "OPF_F") exitWith {};
 if (!isNil "f_cam_VirtualCreated") exitWith {};
-
+if (isServer) exitWith {};
 #include "obj_settings.sqf";
 
 _passedArray = _this select 0;
 //Create the markers for later updating
-if (isNil "bluCacheMarkersCreated") then {
+if (isNil "bc_bluCacheMarkersCreated") then {
 	{
 		//hint format["%1",_passedArray];
 		_markerArray = _x;
@@ -30,7 +30,7 @@ if (isNil "bluCacheMarkersCreated") then {
 		_markerName setMarkerBrushLocal "Grid";
 		_markerName setMarkerColorLocal "ColorOPFOR";
 	} forEach _passedArray;
-	bluCacheMarkersCreated = true;
+	bc_bluCacheMarkersCreated = true;
 };
 
 //Update markers - Only if they are still alive
@@ -43,15 +43,16 @@ if (isNil "bluCacheMarkersCreated") then {
 	_xPos = _markerArray select 1;
 	_yPos = _markerArray select 2;
 	_size = _markerArray select 3;
-	
+    diag_log "Size of Marker:";
+	diag_log _size;
 	//Update marker location
 	_markerName setMarkerPos [_xPos,_yPos];
-	_markerName setMarkerSizeLocal [_size, _size];
+	_markerName setMarkerSize [_size, _size];
 } forEach _passedArray;
 
 // Hide rough markers for dead caches
 {
     _markerName = str(_x) + "MarkBlu";
     _markerName setMarkerAlphaLocal 0;
-} forEach phx_deadCacheArray;
+} forEach bc_deadCacheArray;
 titleText ["Your map has been updated with intel on cache locations.","PLAIN DOWN"];

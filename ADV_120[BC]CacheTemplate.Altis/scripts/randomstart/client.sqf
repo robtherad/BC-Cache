@@ -50,9 +50,9 @@ if (_randomizeTeam) then {
     waitUntil {
         if (isNil "_randomMarker") then {
             switch (side player) do {
-            case west: {_randomMarker = missionNamespace getVariable ["phx_rs_WestMark",nil];};
-            case east: {_randomMarker = missionNamespace getVariable ["phx_rs_EastMark",nil];};
-            case independent: {_randomMarker = missionNamespace getVariable ["phx_rs_GuerMark",nil];};
+            case west: {_randomMarker = missionNamespace getVariable ["bc_rs_WestMark",nil];};
+            case east: {_randomMarker = missionNamespace getVariable ["bc_rs_EastMark",nil];};
+            case independent: {_randomMarker = missionNamespace getVariable ["bc_rs_GuerMark",nil];};
             };
             false
         } else {true};
@@ -60,14 +60,14 @@ if (_randomizeTeam) then {
     _startMarkPos = getMarkerPos _randomMarker;
 
     //Boundary marker for starting location
-    _startMark = createMarkerLocal ["phx_rs_startZone",_startMarkPos];
+    _startMark = createMarkerLocal ["bc_rs_startZone",_startMarkPos];
     _startMark setMarkerShapeLocal "ELLIPSE";
     _startMark setMarkerSizeLocal [50, 50];
     _startMark setMarkerDirLocal (markerDir _randomMarker);
     _startMark setMarkerBrushLocal "SolidBorder";
     _startMark setMarkerColorLocal _color;
     //Text marker for starting location
-    _startMarkTwo = createMarkerLocal ["phx_rs_startZoneTwo",_startMarkPos];
+    _startMarkTwo = createMarkerLocal ["bc_rs_startZoneTwo",_startMarkPos];
     _startMarkTwo setMarkerShapeLocal "ICON";
     _startMarkTwo setMarkerColorLocal "ColorBlack";
     _startMarkTwo setMarkerTypeLocal "hd_dot";
@@ -85,9 +85,9 @@ if (_randomizeTeam) then {
     player setPos [(_newPos select 0), (_newPos select 1)];
     player setDir (markerDir _randomMarker);
 
-    waitUntil {CBA_missionTime > 0;};
+    waitUntil {time > 0;};
     titleText ["Your team has been started in a location unknown to the enemy.\n\nDO NOT fire your weapon during safe start or the enemy will know where you are.","PLAIN DOWN", 1.5];
 };
-if (!isNil "phx_rs_WestMark") then {diag_log format["[randomstart] BLUFOR started at = %1",phx_rs_WestMark];};
-if (!isNil "phx_rs_EastMark") then {diag_log format["[randomstart] REDFOR started at = %1",phx_rs_EastMark];};
-if (!isNil "phx_rs_GuerMark") then {diag_log format["[randomstart] GREENFOR started at = %1",phx_rs_GuerMark];};
+if (!isNil "bc_rs_WestMark") then {diag_log format["[randomstart] BLUFOR started at = %1",bc_rs_WestMark];};
+if (!isNil "bc_rs_EastMark") then {diag_log format["[randomstart] REDFOR started at = %1",bc_rs_EastMark];};
+if (!isNil "bc_rs_GuerMark") then {diag_log format["[randomstart] GREENFOR started at = %1",bc_rs_GuerMark];};
