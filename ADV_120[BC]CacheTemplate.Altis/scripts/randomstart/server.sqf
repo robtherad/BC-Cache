@@ -22,18 +22,18 @@ _randomTeamArray = []; //
 //Select a marker from each array at random then broadcast to all clients
 // BLUFOR
 if (_randomizeWest && (count _markerArrayWest > 0)) then {
-    bc_rs_WestMark = selectRandom _markerArrayWest;
-    publicVariable "bc_rs_WestMark";
-    _randomTeamArray pushBack [_placeMarkerWest, bc_rs_WestMark, _objectArrayWest , "WEST"];
+    phx_rs_WestMark = selectRandom _markerArrayWest;
+    publicVariable "phx_rs_WestMark";
+    _randomTeamArray pushBack [_placeMarkerWest, phx_rs_WestMark, _objectArrayWest , "WEST"];
 };
 // OPFOR
 if (_randomizeEast && (count _markerArrayEast > 0)) then {
-    bc_rs_EastMark = selectRandom _markerArrayEast;
+    phx_rs_EastMark = selectRandom _markerArrayEast;
     _overlapWest = true;
     while {_overlapWest} do {
-        if (!isNil "bc_rs_WestMark") then {
-            if (bc_rs_WestMark == bc_rs_EastMark) then {
-                bc_rs_EastMark = selectRandom _markerArrayEast;
+        if (!isNil "phx_rs_WestMark") then {
+            if (phx_rs_WestMark == phx_rs_EastMark) then {
+                phx_rs_EastMark = selectRandom _markerArrayEast;
                 _overlapWest = true;
             } else {
                 _overlapWest = false;
@@ -42,18 +42,18 @@ if (_randomizeEast && (count _markerArrayEast > 0)) then {
             _overlapWest = false;
         };
     };
-    publicVariable "bc_rs_EastMark";
-    _randomTeamArray pushBack [_placeMarkerEast, bc_rs_EastMark, _objectArrayEast, "EAST"];
+    publicVariable "phx_rs_EastMark";
+    _randomTeamArray pushBack [_placeMarkerEast, phx_rs_EastMark, _objectArrayEast, "EAST"];
 };
 // INDFOR
 if (_randomizeIndependent && (count _markerArrayIndependent > 0)) then {
-    bc_rs_GuerMark = selectRandom _markerArrayIndependent;
+    phx_rs_GuerMark = selectRandom _markerArrayIndependent;
     _overlapWest = true;
     _overlapEast = true;
     while {_overlapWest || _overlapEast} do {
-        if (!isNil "bc_rs_WestMark") then {
-            if (bc_rs_WestMark == bc_rs_GuerMark) then {
-                bc_rs_GuerMark = selectRandom _markerArrayIndependent;
+        if (!isNil "phx_rs_WestMark") then {
+            if (phx_rs_WestMark == phx_rs_GuerMark) then {
+                phx_rs_GuerMark = selectRandom _markerArrayIndependent;
                 _overlapWest = true;
             } else {
                 _overlapWest = false;
@@ -61,9 +61,9 @@ if (_randomizeIndependent && (count _markerArrayIndependent > 0)) then {
         } else {
             _overlapWest = false;
         };
-        if (!isNil "bc_rs_EastMark") then {
-            if (bc_rs_EastMark == bc_rs_GuerMark) then {
-                bc_rs_GuerMark = selectRandom _markerArrayIndependent;
+        if (!isNil "phx_rs_EastMark") then {
+            if (phx_rs_EastMark == phx_rs_GuerMark) then {
+                phx_rs_GuerMark = selectRandom _markerArrayIndependent;
                 _overlapEast = true;
             } else {
                 _overlapEast = false;
@@ -72,8 +72,8 @@ if (_randomizeIndependent && (count _markerArrayIndependent > 0)) then {
             _overlapEast = false;
         };
     };
-    publicVariable "bc_rs_GuerMark";
-    _randomTeamArray pushBack [_placeMarkerIndependent, bc_rs_GuerMark, _objectArrayIndependent, "INDEPENDENT"];
+    publicVariable "phx_rs_GuerMark";
+    _randomTeamArray pushBack [_placeMarkerIndependent, phx_rs_GuerMark, _objectArrayIndependent, "INDEPENDENT"];
 };
 
 { //forEach _randomTeamArray

@@ -8,7 +8,7 @@ _exitScript = nil;
 
 _vehArray = [apc1,apc2,apc3,apc4,hmmv,ah9,mh9,ch47];
 
-while {bc_missionRuntimeMins >= floor(time/60)} do {
+while {phx_missionRuntimeMins >= floor(time/60)} do {
 	{ // forEach _vehArray;
         if (local _x) then {
             if ( (_x distance (getMarkerPos "repair") < 50) && ((((getPosATL _x) select 2)) < 1) ) then {

@@ -12,7 +12,7 @@ if (isServer) exitWith {};
 
 _passedArray = _this select 0;
 //Create the markers for later updating
-if (isNil "bc_bluCacheMarkersCreated") then {
+if (isNil "phx_bluCacheMarkersCreated") then {
 	{
 		//hint format["%1",_passedArray];
 		_markerArray = _x;
@@ -30,7 +30,7 @@ if (isNil "bc_bluCacheMarkersCreated") then {
 		_markerName setMarkerBrushLocal "Grid";
 		_markerName setMarkerColorLocal "ColorOPFOR";
 	} forEach _passedArray;
-	bc_bluCacheMarkersCreated = true;
+	phx_bluCacheMarkersCreated = true;
 };
 
 //Update markers - Only if they are still alive
@@ -54,5 +54,5 @@ if (isNil "bc_bluCacheMarkersCreated") then {
 {
     _markerName = str(_x) + "MarkBlu";
     _markerName setMarkerAlphaLocal 0;
-} forEach bc_deadCacheArray;
+} forEach phx_deadCacheArray;
 titleText ["Your map has been updated with intel on cache locations.","PLAIN DOWN"];

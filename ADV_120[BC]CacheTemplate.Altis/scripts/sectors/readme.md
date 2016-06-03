@@ -7,7 +7,7 @@ Place down triggers with `Type` set to `None`, `Activation` set to `Anybody` and
 
 Place down two `Icon` markers with any icon you want (players can't see `empty` type markers) with the names `opPointsMark` and `bluPointsMark`. Place these somewhere near the edge of your map as they will be continually updating with the points total of each team. Don't place them too close to each other or they will overlap when players zoom out. 
 #####server.sqf
-Open the `server.sqf` file in the sector module and find the line defining `bc_triggerArray`. This array is where you put the names of all the triggers you wish to use as sectors.
+Open the `server.sqf` file in the sector module and find the line defining `phx_triggerArray`. This array is where you put the names of all the triggers you wish to use as sectors.
 
 #####init.sqf
 To enable this module you will need to add the following line to the bottom of your mission's `init.sqf`:

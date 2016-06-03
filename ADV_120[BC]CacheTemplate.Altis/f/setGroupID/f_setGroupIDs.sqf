@@ -27,25 +27,29 @@ _groups = [
 //     ex: [1,6,[1,2,3,4]] - mainChannel is ch1, altChannel is ch6, ch2 is 1 unit MHz higher than ch1, etc.
 
 // BLUFOR
-["Blue_HQ","BLU CMD","Command",2, [1, 6, [1, 2, 3, 4, .1]] ],
+["Blue_HQ","BLU CMD","Command",2, [1, 6, [1, 2, 3, 4, .1, .5]] ],
 
-["Blue_A","A","Alpha Squad",1, [2, 1, [1, 1.1, 1.2]] ],
-["Blue_A1","A1","Alpha One",0, [3, 2, [1, 1.1, 1.2]] ],
-["Blue_A2","A2","Alpha Two",0, [4, 2, [1, 1.1, 1.2]] ],
+["Blue_P","P","Pilots",1, [2, 1, [.5]] ],
 
-["Blue_B","B","Bravo Squad",1, [2, 1, [2, 2.1, 2.2]] ],
-["Blue_B1","B1","Bravo One",0, [3, 2, [2, 2.1, 2.2]] ],
-["Blue_B2","B2","Bravo Two",0, [4, 2, [2, 2.1, 2.2]] ],
+["Blue_A","A","Alpha Squad",1, [2, 1, [1, 1.1, 1.2, 1.3]] ],
+["Blue_A1","A1","Alpha One",0, [3, 2, [1, 1.1, 1.2, 1.3]] ],
+["Blue_A2","A2","Alpha Two",0, [4, 2, [1, 1.1, 1.2, 1.3]] ],
+["Blue_ACrew","A CRW","Alpha Crewmen",0, [5, 2, [1, 1.1, 1.2, 1.3]] ],
 
-["Blue_C","C","Charlie Squad",1, [2, 1, [3, 3.1, 3.2]] ],
-["Blue_C1","C1","Charlie One",0, [3, 2, [3, 3.1, 3.2]] ],
-["Blue_C2","C2","Charlie Two",0, [4, 2, [3, 3.1, 3.2]] ],
+["Blue_B","B","Bravo Squad",1, [2, 1, [2, 2.1, 2.2, 2.3]] ],
+["Blue_B1","B1","Bravo One",0, [3, 2, [2, 2.1, 2.2, 2.3]] ],
+["Blue_B2","B2","Bravo Two",0, [4, 2, [2, 2.1, 2.2, 2.3]] ],
+["Blue_BCrew","B CRW","Bravo Crewmen",0, [5, 2, [2, 2.1, 2.2, 2.3]] ],
 
-["Blue_D","D","Delta Squad",1, [2, 1, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Blue_D1","D1","Delta One",0, [3, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Blue_D2","D2","Delta Two",0, [4, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Blue_D3","D3","Delta Three",0, [5, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Blue_D4","D4","Delta Four",0, [6, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
+["Blue_C","C","Charlie Squad",1, [2, 1, [3, 3.1, 3.2, 3.3]] ],
+["Blue_C1","C1","Charlie One",0, [3, 2, [3, 3.1, 3.2, 3.3]] ],
+["Blue_C2","C2","Charlie Two",0, [4, 2, [3, 3.1, 3.2, 3.3]] ],
+["Blue_CCrew","C CRW","Charlie Crewmen",0, [5, 2, [3, 3.1, 3.2, 3.3]] ],
+
+["Blue_D","D","Delta Squad",1, [2, 1, [4, 4.1, 4.2, 4.3]] ],
+["Blue_D1","D1","Delta One",0, [3, 2, [4, 4.1, 4.2, 4.3]] ],
+["Blue_D2","D2","Delta Two",0, [4, 2, [4, 4.1, 4.2, 4.3]] ],
+["Blue_DCrew","D CRW","Delta Crewmen",0, [5, 2, [4, 4.1, 4.2, 4.3]] ],
 
 
 // REDFOR
@@ -63,11 +67,9 @@ _groups = [
 ["Red_G1","G1","Golf One",0, [3, 2, [3, 3.1, 3.2]] ],
 ["Red_G2","G2","Golf Two",0, [4, 2, [3, 3.1, 3.2]] ],
 
-["Red_H","H","Hotel Squad",1, [2, 1, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Red_H1","H1","Hotel One",0, [3, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Red_H2","H2","Hotel Two",0, [4, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Red_H3","H3","Hotel Three",0, [5, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
-["Red_H4","H4","Hotel Four",0, [6, 2, [4, 4.1, 4.2, 4.3, 4.4]] ],
+["Red_H","H","Hotel Squad",1, [2, 1, [4, 4.1, 4.2]] ],
+["Red_H1","H1","Hotel One",0, [3, 2, [4, 4.1, 4.2]] ],
+["Red_H2","H2","Hotel Two",0, [4, 2, [4, 4.1, 4.2]] ],
 
 // INDFOR
 ["Green_HQ","IND CMD","Command",2, [1, 6, [1, 2, 3, 4, .1]] ],

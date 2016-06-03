@@ -7,8 +7,8 @@ if (isServer) then {
         _vehName setPos (getMarkerPos (_x select _ranInt));
         _vehName setVariable ["cacheMarkerName",(_x select _ranInt),true];
     } forEach _cacheList;
-    bc_cachesDeployed = true;
-    publicVariable "bc_cachesDeployed";
+    phx_cachesDeployed = true;
+    publicVariable "phx_cachesDeployed";
     
     { //forEach _cacheList
         _vehName = _x select 0;

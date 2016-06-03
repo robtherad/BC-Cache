@@ -11,9 +11,9 @@ _nextDone = 1;
 _getDone = 1.5;
 _originalErrorPos = 400;
 _originalErrorSize = 750;
-bc_cache_mission = true;
+phx_cache_mission = true;
 
-while {bc_cache_mission} do {
+while {phx_cache_mission} do {
 	if ((time >= (_missionFracTime*60)*_nextDone) && (time <= ((_missionTotalTime*60)-600))) then {
 		_passedVars = [];
 		{
@@ -35,7 +35,7 @@ while {bc_cache_mission} do {
 			
 			//Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach bc_cacheArray;
+		} forEach phx_cacheArray;
 		_nextDone = _nextDone + .25;
 		_getDone = _nextDone + .5;
 		//Execute client side of script if client is on side west
@@ -64,7 +64,7 @@ while {bc_cache_mission} do {
             
             //Add container to passed variable list
 			_passedVars pushBack _markArray;
-		} forEach bc_cacheArray;
+		} forEach phx_cacheArray;
 		_nextDone = 50;
 		_getDone = 51;
 		
@@ -74,7 +74,7 @@ while {bc_cache_mission} do {
         diag_log "PASSED FINAL BLUFOR MARKERS";
 		[[[_passedVars],"scripts\cache\objectives\c_cacheMarkersBlufor.sqf"],"BIS_fnc_execVM",true,false] call BIS_fnc_MP;
 		//No more need to loop, final update
-        if (true) then {bc_cache_mission = false;};
+        if (true) then {phx_cache_mission = false;};
 		if (true) exitWith {};
 	};
 	uisleep 5;

@@ -1,8 +1,5 @@
 //init.sqf - Executed when mission is started (before briefing screen)
-
-// Activates the trigger used for the mission area. Delete the line below and the trigger if you want no mission boundary.
-if (hasInterface) then {phx_playerBoundsCheck_PFH = [phx_fnc_core_playerBoundsCheck, 5, []] call CBA_fnc_addPerFrameHandler;};
-
+if (!didJIP) then {
 //Create briefing
 [] execVM "briefing.sqf";
 
@@ -15,8 +12,34 @@ if (hasInterface) then {phx_playerBoundsCheck_PFH = [phx_fnc_core_playerBoundsCh
 //Call the safeStart
 [] execVM "f\safeStart\f_safeStart.sqf";
 
-//Call PHX Template
+//Call BC Template
 [] execVM "f\phxInit.sqf";
 
 //Call the cache scripts
-[] execVM "scripts\cache\cache_init.sqf";
+if (isServer) then {
+	[] execVM "scripts\cache\objectives\s_cacheMarkersBlufor.sqf"; //calls c_cacheMarkersBlufor.sqf
+};
+
+
+[] execVM "scripts\randomstart\client.sqf";
+[] execVM "scripts\randomstart\server.sqf";
+
+[] execVM "scripts\veh_lock\veh_lock.sqf";
+[] execVM "scripts\veh_cargo\veh_cargo.sqf";
+
+[] execVM "scripts\veh_repair.sqf";
+
+[] spawn {
+    waitUntil {CBA_missionTime > 10};
+    systemChat " ";
+    systemChat "OPFOR are allowed to move freely throughout the AO to prepare their defence. BLUFOR must stay in their starting zone until safestart is over. Read the section '[BC] Mission Notes' in your journal.";
+    systemChat " ";
+};
+} else {
+// MACHINE DID JIP
+phx_missionSafeTime = ["f_param_mission_timer",0] call BIS_fnc_getParamValue; //Default - 0 minute safestart
+phx_missionRunTime = ["mission_runtime",45] call BIS_fnc_getParamValue; //Default - 45 minute battle phase
+phx_missionRuntimeMins = phx_missionRunTime + phx_missionSafeTime;
+
+phx_end_clientWait = [phx_fnc_end_clientWait, 5, []] call CBA_fnc_addPerFrameHandler;
+};

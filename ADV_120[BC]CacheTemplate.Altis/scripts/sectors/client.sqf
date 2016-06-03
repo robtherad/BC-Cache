@@ -5,9 +5,9 @@ passed arguments:
 
 _this select 0: _sideCurOwned - Side that now controls the area
 _this select 1: _x - a trigger
-_this select 2: bc_westPoints
-_this select 3: bc_eastPoints
-_this select 4: bc_endPoints
+_this select 2: phx_westPoints
+_this select 3: phx_eastPoints
+_this select 4: phx_endPoints
 */
 
 _sideCurOwned = _this select 0;
