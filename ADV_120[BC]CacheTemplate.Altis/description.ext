@@ -20,11 +20,11 @@ class CfgFunctions {
         class objSpawn {
             file = "scripts\cache\objectives";
             class cacheMarkers{};
-            class cacheMarkersInit {postInit = 1;};
-            class createCaches {postInit = 1;};
+            class cacheMarkersInit{postInit = 1;};
+            class createCaches{postInit = 1;};
         };
     };
-    class BC {
+    class PHX {
         #include "f\functions.hpp"
     };
 };
