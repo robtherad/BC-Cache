@@ -27,7 +27,7 @@ if (!isNil "phx_cachesDeployed" && phx_cachesPlaced) then {
             _return
         }]; 
         
-        if (side player == east) then {
+        if ( ((side group player) isEqualTo east) || {(side group player) isEqualTo sideLogic}) then {
             _markerstr = _x getVariable "cacheMarkerName";
             _markerstr setMarkerShapeLocal "ICON";
             _markerstr setMarkerTypeLocal "hd_dot";

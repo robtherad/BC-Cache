@@ -1,17 +1,17 @@
 //This script handles the fixing of vehicles and runs on both the client and the server.
 _exitScript = false;
 if (!isServer) then {
-    if (side player != west) then {_exitScript = true};
+    if (side group player != west) then {_exitScript = true};
 };
 if (_exitScript) exitWith {};
 _exitScript = nil;
 
 _vehArray = [apc1,apc2,apc3,apc4,hmmv,ah9,mh9,ch47];
 
-while {phx_missionRuntimeMins >= floor(time/60)} do {
+while {phx_missionRuntimeMins >= floor(CBA_missionTime/60)} do {
 	{ // forEach _vehArray;
         if (local _x) then {
-            if ( (_x distance (getMarkerPos "repair") < 50) && ((((getPosATL _x) select 2)) < 1) ) then {
+            if ( (_x distance (getMarkerPos "repair") < 150) && ((((getPosATL _x) select 2)) < 1) ) then {
                 _dmg = damage _x;
                 _fuel = fuel _x;
                 // DMG

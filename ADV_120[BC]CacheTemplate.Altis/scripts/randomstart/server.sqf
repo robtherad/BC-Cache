@@ -76,6 +76,9 @@ if (_randomizeIndependent && (count _markerArrayIndependent > 0)) then {
     _randomTeamArray pushBack [_placeMarkerIndependent, phx_rs_GuerMark, _objectArrayIndependent, "INDEPENDENT"];
 };
 
+// waitUntil {(CBA_missionTime > 5)};
+
+"repair" setMarkerPos (getMarkerPos phx_rs_WestMark);
 { //forEach _randomTeamArray
 
     // Unpack variables
