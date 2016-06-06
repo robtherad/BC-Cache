@@ -1,9 +1,3 @@
-# WARNING THIS WHOLE REPO IS OUTDATED!
-
-# USE THIS CRAP AT YOUR OWN PERIL!
-
-****
-
 #### [DOWNLOAD TEMPLATE](https://github.com/robtherad/BC-Cache/archive/master.zip)
 
 ****
