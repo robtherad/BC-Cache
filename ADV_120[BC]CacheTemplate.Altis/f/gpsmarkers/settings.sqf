@@ -1,5 +1,5 @@
 /*
-    Settings file for the bc\gpsmarkers\ module.
+    Settings file for the phx\gpsmarkers\ module.
     
     Vehicle Markers
         If you do have vehicles in your mission, make sure they are named and then add that name to the array for the team they are on. If vehicles exist in your mission but are not entered into this settings file they will not have markers in game.  
@@ -48,10 +48,10 @@
         This system should allow for more in depth missions featuring three sides.
 */
 // 0 = armor, 1 == helicopter, 2 == plane
-_westVehArray = [ [apc1,0],[apc2,0],[apc3,0],[apc4,0],[hmmv,0],[ah9,1],[mh9,1],[ch47,1] ];
+_westVehArray = nil;
 _eastVehArray = nil;
 _indVehArray = nil;
-phx_ignoreMarkerArray = ["A CRW", "B CRW","C CRW","C CRW","P"]; //if blank set to []
+phx_ignoreMarkerArray = []; //if blank set to []
 _sidesVisibleToWest = [west]; //BLUFOR (west)
-_sidesVisibleToEast = []; //OPFOR (east)
+_sidesVisibleToEast = [east]; //OPFOR (east)
 _sidesVisibleToGuer = [independent]; //INDEPENDENT (independent)

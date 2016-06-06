@@ -71,26 +71,7 @@ _lockArray = [
 */
 // Place entries below. Make sure to separate entries with a comma and a line break!
 
-//BLUFOR
-[apc1,[west],[1,1,1,0],["B_crew_F"],[], "Only BLUFOR Crewmen are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[apc2,[west],[1,1,1,0],["B_crew_F"],[], "Only BLUFOR Crewmen are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[apc3,[west],[1,1,1,0],["B_crew_F"],[], "Only BLUFOR Crewmen are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[apc4,[west],[1,1,1,0],["B_crew_F"],[], "Only BLUFOR Crewmen are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[hmmv,[west],[0,0,0,0],["B_crew_F"],[], "Only BLUFOR are allowed to use this vehicle."],
 
-[ah9,[west],[1,1,1,0],["B_Pilot_F"],[], "Only BLUFOR Pilots are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[mh9,[west],[1,1,1,0],["B_Pilot_F"],[], "Only BLUFOR Pilots are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-[ch47,[west],[1,1,1,0],["B_Pilot_F"],[], "Only BLUFOR Pilots are able to operate this vehicle. Only BLUFOR are able to ride as passengers."],
-
-
-// OPFOR
-[t1,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."],
-[t2,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."],
-[t3,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."],
-[t4,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."],
-
-[t5,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."],
-[t6,[east],[0,0,0,0],[],[], "Only OPFOR are allowed to use this vehicle."]
 
 // Always make sure there's no comma after the last entry!
 

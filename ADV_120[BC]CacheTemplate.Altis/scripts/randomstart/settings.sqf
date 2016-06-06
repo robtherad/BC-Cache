@@ -32,20 +32,20 @@
 
 // WEST (BLUFOR)
 _randomizeWest = true; // true OR false - use randomstart script with this team
-_placeMarkerWest = "bluPlacemark"; // Name of the marker to be used as the 'placemark' for BLUFOR
-_markerArrayWest = ["bluSpawn","bluSpawn_1","bluSpawn_2"];
-_objectArrayWest = [apc1,apc2,apc3,apc4,hmmv,ah9,mh9,ch47,box1,box2,box3]; // If empty make equal to [].
+_placeMarkerWest = "blustart"; // Name of the marker to be used as the 'placemark' for BLUFOR
+_markerArrayWest = ["blustart_1", "blustart_2", "blustart_3", "blustart_4", "blustart_5", "blustart_6"];
+_objectArrayWest = []; // If empty make equal to [].
 
 
 // EAST (REDFOR)
-_randomizeEast = true; // true OR false - use randomstart script with this team
-_placeMarkerEast = "redPlacemark"; // Name of the marker to be used as the 'placemark' for REDFOR
-_markerArrayEast = ["redSpawn","redSpawn_1","redSpawn_2","redSpawn_3","redSpawn_4"];
-_objectArrayEast = [t1,t2,t3,t4,t5,t6]; // If empty make equal to []
+_randomizeEast = false; // true OR false - use randomstart script with this team
+_placeMarkerEast = "redstart"; // Name of the marker to be used as the 'placemark' for REDFOR
+_markerArrayEast = [];
+_objectArrayEast = []; // If empty make equal to []
 
 
 // INDEPENDENT (GREENFOR)
 _randomizeIndependent = false; // true OR false - use randomstart script with this team
-_placeMarkerIndependent = "placemarkGreen"; // Name of the marker to be used as the 'placemark' for GREENFOR
+_placeMarkerIndependent = "grnstart"; // Name of the marker to be used as the 'placemark' for GREENFOR
 _markerArrayIndependent = [];
 _objectArrayIndependent = []; // If empty make equal to [].
