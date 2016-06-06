@@ -4,6 +4,9 @@ class core {
     class core_mpKilled{};
     class core_showTags{};
     class core_addRatingEH{postInit = 1;};
+    class core_playerBoundsCheck{};
+    class core_setDate{postInit = 1;};
+    class core_setWeather{postInit = 1;};
 };
 class radios {
     file = "f\radios";
@@ -31,4 +34,12 @@ class endConditions {
     class end_clientTime{};
     class end_checkTime{};
     class end_checkAlive{};
+};
+class misc {
+    file = "f\misc";
+    class _clearBody{};
+    class _clearContainer{};
+    class _hintThenClear{};
+    class serverJIP{postInit = 1;};
+    class clientJIP{postInit = 1;};
 };

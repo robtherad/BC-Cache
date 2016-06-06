@@ -13,7 +13,18 @@
 [] execVM "f\safeStart\f_safeStart.sqf";
 
 //Call BC Template
-[] execVM "f\bcInit.sqf";
+[] execVM "f\phxInit.sqf";
 
 //Call the cache scripts
-[] execVM "scripts\cache\cache_init.sqf";
+if (isServer) then {
+	[] execVM "scripts\cache\objectives\s_cacheMarkersBlufor.sqf"; //calls c_cacheMarkersBlufor.sqf
+};
+
+
+[] execVM "scripts\randomstart\client.sqf";
+[] execVM "scripts\randomstart\server.sqf";
+
+[] execVM "scripts\veh_lock\veh_lock.sqf";
+[] execVM "scripts\veh_cargo\veh_cargo.sqf";
+
+[] execVM "scripts\veh_repair.sqf";

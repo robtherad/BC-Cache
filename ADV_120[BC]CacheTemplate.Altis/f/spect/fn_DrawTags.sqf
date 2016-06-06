@@ -39,7 +39,7 @@ if(!f_cam_toggleTags || f_cam_mapMode == 2 ) exitWith{};
         };
         _str = _x getVariable ["f_cam_nicename",""];
         if(_str == "") then {
-            _str = (toString(toArray(_x getVariable ["BC_LongName",(groupID _x)]) - [45]));
+            _str = (toString(toArray(_x getVariable ["phx_LongName",(groupID _x)]) - [45]));
             _x setVariable ["f_cam_nicename",_str];
         };
         drawIcon3D ["\A3\ui_f\data\map\markers\nato\b_inf.paa", _color,[_visPos select 0,_visPos select 1,(_visPos select 2) +30], 1, 1, 0,_str, 2, 0.025, "TahomaB"];
@@ -63,14 +63,14 @@ if(!f_cam_toggleTags || f_cam_mapMode == 2 ) exitWith{};
 
 } forEach allGroups;
 
-sectorControl = missionNamespace getVariable "bc_sectorControlActive";
+sectorControl = missionNamespace getVariable "phx_sectorControlActive";
 if (!isNil "sectorControl") then {
     if (sectorControl) then {
         _iconSize = 0.5;
         _textSize = 0.03;
-        { //forEach bc_triggerArray;
+        { //forEach phx_triggerArray;
             _distToCam = (call f_cam_GetCurrentCam) distance _x;
-            _owner = _x getVariable "bc_sec_lastOwner";
+            _owner = _x getVariable "phx_sec_lastOwner";
             _color = switch (_owner) do {
                 case 0: {f_cam_blufor_color};
                 case 1: {f_cam_opfor_color};
@@ -115,7 +115,7 @@ if (!isNil "sectorControl") then {
             if (_distToCam < _maxDist) then {
                 drawIcon3D ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,getpos _x ,_iconSize,_iconSize,0,iconName,2,_textSize,"TahomaB"];
             };
-        } forEach bc_triggerArray;
+        } forEach phx_triggerArray;
     };
 };
 if (true) then {
@@ -138,7 +138,7 @@ if (true) then {
             _color set [3,0];
         };
         drawIcon3D ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,.75,.75,0,iconName,2,0.025,"TahomaB"];
-    } forEach bc_cacheArray;
+    } forEach phx_cacheArray;
     _iconSize = 0.5;
     _textSize = 0.03;
     { //forEach triggerArray;
@@ -159,5 +159,5 @@ if (true) then {
             _color set [3,0];
         };
         drawIcon3D ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,.75,.75,0,iconName,2,0.025,"TahomaB"];
-    } forEach bc_deadCacheArray;
+    } forEach phx_deadCacheArray;
 };

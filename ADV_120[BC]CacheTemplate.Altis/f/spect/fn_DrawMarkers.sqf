@@ -23,11 +23,11 @@ _fullmapWindow drawIcon ["\A3\ui_f\data\GUI\Rsc\RscDisplayMissionEditor\iconCame
     };
 
 } foreach allunits;
-sectorControl = missionNamespace getVariable "bc_sectorControlActive";
+sectorControl = missionNamespace getVariable "phx_sectorControlActive";
 if (!isNil "sectorControl") then {
     if (sectorControl) then {
-        { //forEach bc_triggerArray;
-            _owner = _x getVariable "bc_sec_lastOwner";
+        { //forEach phx_triggerArray;
+            _owner = _x getVariable "phx_sec_lastOwner";
             _color = switch (_owner) do {
                 case 0: {f_cam_blufor_color};
                 case 1: {f_cam_opfor_color};
@@ -45,7 +45,7 @@ if (!isNil "sectorControl") then {
                 default {iconName = str(iconName) + " - ERROR";};
             };
             _fullmapWindow drawIcon ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,getpos _x ,20,20,0,iconName,2,0.04,"TahomaB"];
-        } forEach bc_triggerArray;
+        } forEach phx_triggerArray;
     };
 };
 if (true) then {
@@ -61,7 +61,7 @@ if (true) then {
 			_pos = missionNamespace getVariable [_markerPosVar,_markerName];
 			
 			_fullmapWindow drawIcon ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,20,20,0,iconName,2,0.05,"TahomaB"];
-		} forEach bc_cacheArray;
+		} forEach phx_cacheArray;
 		{
 			_color = f_cam_blufor_color;
 			_color set [3,1];
@@ -73,7 +73,7 @@ if (true) then {
 			_pos = missionNamespace getVariable [_markerPosVar,_markerName];
 			
 			_fullmapWindow drawIcon ["\A3\ui_f\data\map\markers\military\flag_ca.paa",_color,_pos,20,20,0,iconName,2,0.05,"TahomaB"];
-		} forEach bc_deadCacheArray;
+		} forEach phx_deadCacheArray;
 	};
 };
 f_cam_fired = f_cam_fired - [objNull];

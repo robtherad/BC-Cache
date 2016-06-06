@@ -1,12 +1,12 @@
 #include "obj_settings.sqf";
-bc_cachesPlaced = true;
+phx_cachesPlaced = true;
 {
     _mark = _x getVariable ["cacheMarkerName",nil];
-    if ( isNil "_mark" ) then { bc_cachesPlaced = false; };
+    if ( isNil "_mark" ) then { phx_cachesPlaced = false; };
 } forEach _cacheArray;
 
-if (!isNil "bc_cachesDeployed" && bc_cachesPlaced) then {
-    [bc_cacheMarkersEH] call CBA_fnc_removePerFrameHandler;
+if (!isNil "phx_cachesDeployed" && phx_cachesPlaced) then {
+    [phx_cacheMarkersEH] call CBA_fnc_removePerFrameHandler;
     {
         _markerName = str(_x) + "MarkVar";
         _markerText = missionNamespace getVariable [_markerName,_markerName];
@@ -27,7 +27,7 @@ if (!isNil "bc_cachesDeployed" && bc_cachesPlaced) then {
             _return
         }]; 
         
-        if (side player == east) then {
+        if ( ((side group player) isEqualTo east) || {(side group player) isEqualTo sideLogic}) then {
             _markerstr = _x getVariable "cacheMarkerName";
             _markerstr setMarkerShapeLocal "ICON";
             _markerstr setMarkerTypeLocal "hd_dot";
